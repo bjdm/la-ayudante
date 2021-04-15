@@ -1,0 +1,8 @@
+- write readme.md
+- improve logging
+    - add email for schema fails
+- improve HTTP exception catching
+    - use prepared_requests for rate limiting?
+- add type hinting
+- add tests for api_client
+- move schema validation to its own class
