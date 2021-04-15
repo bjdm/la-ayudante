@@ -1,4 +1,3 @@
-- write readme.md
 - improve logging
     - add email for schema fails
 - improve HTTP exception catching
@@ -6,3 +5,14 @@
 - add type hinting
 - add tests for api_client
 - move schema validation to its own class
+- refactor to deploy with docker?
+    - move requirements to setup.py or similar
+    - add dev, testing, prod targets
+- documentation
+    - docstrings
+    - readme
+
+
+TESTING
+- test obj_from_dict methods
+- update tests for out_time duration

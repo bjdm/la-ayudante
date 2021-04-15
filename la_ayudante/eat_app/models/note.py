@@ -53,23 +53,25 @@ class Note:
         return '\n'.join(new_note) or None
 
 
-    def set_header(self, out_string, next_string):
+    def set_header(self, out_string, next_string=None):
         if self.remove_header():
             note = self.remove_header().splitlines()
         else:
             note = []
-        note.insert(0, next_string)
+        if next_string is not None:
+            note.insert(0, next_string)
         note.insert(0, out_string)
         return '\n'.join(note)
 
 
-    def generate_note(self, out_time, next_tables):
+    def generate_note(self, out_time, next_tables=None):
+        out_string = self._out_string(out_time)
         if next_tables is None:
-            self.temp_note = self.note.remove_header()
+            self.temp_note = self.set_header(out_string)
         else:
-            out_string = self._out_string(out_time)
             next_string = self._next_string(next_tables)
             self.temp_note = self.set_header(out_string, next_string)
+
         if self.temp_note == self.note:
             self.requires_update = False
             self.temp_note = None

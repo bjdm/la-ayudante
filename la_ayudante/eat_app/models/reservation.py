@@ -5,9 +5,10 @@ from la_ayudante.eat_app.models.note import Note
 from la_ayudante.eat_app.models.table import Table
 
 class Reservation:
-    def __init__(self, id, start_time, notes, table_ids, json):
+    def __init__(self, id, start_time, duration, notes, table_ids, json):
         self.id = id
         self.start_time = start_time
+        self.duration = duration
         self.notes = Note(notes)
         self.json = json
         self.tables = []
@@ -23,11 +24,13 @@ class Reservation:
         # TODO: change this. I want to calculate out_time by getting the
         # generate out string and next string
         #out_time = datetime.DateTime
+
         next_reservations = self.get_next_reservations()
         if len(next_reservations) < 1:
             # There are no reservations after -> remove the note header if it 
             # exists and exit early
-            self.notes.remove_header()
+            out_time = self.start_time + timedelta(seconds=self.duration)
+            self.notes.generate_note(out_time)
             return
         elif len(next_reservations) == 1:
             if len(self.tables) > 1:
@@ -70,6 +73,7 @@ def reservation_from_dict(rd):
     reservation = Reservation(
         rd['id'],
         rd['attributes']['start_time'],
+        rd['attributes']['duration'],
         rd['attributes']['notes'],
         [table['id'] for table in rd['relationships']['tables']['data']],
         rd

@@ -20,6 +20,7 @@ def t1_6pm(t1):
     reservation = Reservation(
         'reservation_uuid',
         datetime.strptime('Apr 1 2020 6:00PM', '%b %d %Y %I:%M%p'),
+        6300,
         '',
         [t1.id],
         {}
@@ -31,6 +32,7 @@ def t1_7pm(t1):
     reservation = Reservation(
         'reservation_uuid',
         datetime.strptime('Apr 1 2020 7:00PM', '%b %d %Y %I:%M%p'),
+        6300,
         '',
         [t1.id],
         {}
@@ -42,6 +44,7 @@ def t1_8pm(t1):
     reservation = Reservation(
         'reservation_uuid',
         datetime.strptime('Apr 1 2020 8:00PM', '%b %d %Y %I:%M%p'),
+        6300,
         '',
         [t1.id],
         {}
@@ -53,6 +56,7 @@ def t2_6pm(t2):
     reservation = Reservation(
         'reservation_uuid',
         datetime.strptime('Apr 1 2020 6:00PM', '%b %d %Y %I:%M%p'),
+        6300,
         '',
         [t2.id],
         {}
@@ -64,6 +68,7 @@ def t2_7pm(t2):
     reservation = Reservation(
         'reservation_uuid',
         datetime.strptime('Apr 1 2020 7:00PM', '%b %d %Y %I:%M%p'),
+        6300,
         '',
         [t2.id],
         {}
@@ -75,6 +80,7 @@ def t2_8pm(t2):
     reservation = Reservation(
         'reservation_uuid',
         datetime.strptime('Apr 1 2020 8:00PM', '%b %d %Y %I:%M%p'),
+        6300,
         '',
         [t2.id],
         {}
@@ -86,6 +92,7 @@ def t1t2_6pm(t1, t2):
     reservation = Reservation(
         'reservation_uuid',
         datetime.strptime('Apr 1 2020 6:00PM', '%b %d %Y %I:%M%p'),
+        6300,
         '',
         [t1.id, t2.id],
         {}
@@ -97,6 +104,7 @@ def t1t2_7pm(t1, t2):
     reservation = Reservation(
         'reservation_uuid',
         datetime.strptime('Apr 1 2020 7:00PM', '%b %d %Y %I:%M%p'),
+        6300,
         '',
         [t1.id, t2.id],
         {}
@@ -108,6 +116,7 @@ def t1t2_8pm(t1, t2):
     reservation = Reservation(
         'reservation_uuid',
         datetime.strptime('Apr 1 2020 8:00PM', '%b %d %Y %I:%M%p'),
+        6300,
         '',
         [t1.id, t2.id],
         {}
